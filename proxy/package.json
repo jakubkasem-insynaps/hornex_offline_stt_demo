@@ -1,0 +1,12 @@
+{
+  "name": "stt-proxy",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Holds cloud STT API keys and forwards audio from the demo app. No npm dependencies.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  }
+}

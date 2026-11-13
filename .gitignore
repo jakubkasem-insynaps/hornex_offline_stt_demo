@@ -1,0 +1,34 @@
+# Secrets
+.env
+proxy/.env
+
+# Models, test data and results are large and/or licensed: never commit
+models_out/
+testsets/
+results/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node
+node_modules/
+
+# Flutter / Dart
+app/.dart_tool/
+app/build/
+app/.flutter-plugins
+app/.flutter-plugins-dependencies
+app/android/.gradle/
+app/android/local.properties
+app/android/app/debug/
+app/android/app/release/
+app/ios/Pods/
+app/ios/.symlinks/
+app/ios/Flutter/Flutter.framework
+app/ios/Flutter/Flutter.podspec
+*.iml
+.idea/
+.vscode/

@@ -1,0 +1,13 @@
+# For tools/convert/convert_whisper.py
+# torch is held below 2.9: from 2.9 torch.onnx.export defaults to the new
+# "dynamo" exporter, which the upstream sherpa-onnx export script was not
+# written for.
+torch>=2.4,<2.9
+openai-whisper
+transformers>=4.44
+safetensors
+huggingface_hub
+onnx
+onnxruntime
+onnxscript
+numpy

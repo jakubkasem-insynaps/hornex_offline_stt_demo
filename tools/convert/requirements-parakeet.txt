@@ -1,0 +1,10 @@
+# For tools/convert/convert_parakeet.py (Linux / WSL2 only).
+# onnx / onnxruntime pins follow the upstream sherpa-onnx run.sh for this model.
+nemo_toolkit[asr]
+onnx==1.23.2
+onnxruntime==1.31.1
+kaldi-native-fbank
+librosa
+soundfile
+ipython
+huggingface_hub

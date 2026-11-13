@@ -1,0 +1,26 @@
+{
+  "_comment": "Single source of truth for Slovak scoring normalization. Consumed by tools/common/normalization.py directly and by the Flutter app via the generated file app/lib/core/normalization_rules.g.dart (regenerate with: python tools/common/gen_dart_rules.py).",
+  "version": 1,
+  "compose": {
+    "á": "á", "é": "é", "í": "í", "ó": "ó",
+    "ú": "ú", "ý": "ý", "ĺ": "ĺ", "ŕ": "ŕ",
+    "č": "č", "ď": "ď", "ě": "ě", "ľ": "ľ",
+    "ň": "ň", "ř": "ř", "š": "š", "ť": "ť",
+    "ž": "ž", "ô": "ô", "ä": "ä", "ö": "ö",
+    "ü": "ü", "ů": "ů"
+  },
+  "units": ["nula", "jeden", "dva", "tri", "štyri", "päť", "šesť", "sedem", "osem", "deväť"],
+  "teens": ["desať", "jedenásť", "dvanásť", "trinásť", "štrnásť", "pätnásť", "šestnásť", "sedemnásť", "osemnásť", "devätnásť"],
+  "tens": ["", "", "dvadsať", "tridsať", "štyridsať", "päťdesiat", "šesťdesiat", "sedemdesiat", "osemdesiat", "deväťdesiat"],
+  "hundred": "sto",
+  "thousand": "tisíc",
+  "million": "milión",
+  "variants": {
+    "jedna": "jeden",
+    "jedno": "jeden",
+    "dve": "dva",
+    "milióny": "milión",
+    "miliónov": "milión"
+  },
+  "max_spelled_digits": 9
+}

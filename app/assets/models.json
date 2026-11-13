@@ -1,0 +1,182 @@
+{
+  "_comment": "Offline model catalog. Read by the app (Model Manager, engine list, attributions), by tools/convert/*.py and by tools/eval/evaluate.py. Repo names, revisions, sizes and hashes were read from Hugging Face on 2026-11-12. hosting=url: files are downloaded straight from the listed URLs. hosting=self: files come from <model host>/models/<id>/ (the proxy serves models_out/), produced by the conversion script named in `conversion`.",
+  "vad": {
+    "id": "silero-vad",
+    "displayName": "Silero VAD",
+    "license": "MIT",
+    "attribution": "Silero VAD by Silero Team (https://github.com/snakers4/silero-vad), ONNX file distributed by k2-fsa/sherpa-onnx.",
+    "file": "silero_vad.onnx",
+    "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/silero_vad.onnx",
+    "size": 643854
+  },
+  "models": [
+    {
+      "id": "kinit-whisper-tiny-sk",
+      "displayName": "KInIT Whisper tiny SK",
+      "family": "whisper",
+      "whisperSize": "tiny",
+      "sourceRepo": "kinit/whisper-tiny-sk",
+      "sourceRevision": "c37078505d84ae98246a277a8c410320ee4e8d19",
+      "license": "Apache-2.0",
+      "attribution": "Whisper tiny fine-tuned for Slovak by KInIT (Kempelen Institute of Intelligent Technologies). Base model: OpenAI Whisper.",
+      "quantization": "int8 dynamic, MatMul weights only (onnxruntime quantize_dynamic, QInt8)",
+      "note": "Low-end reference (39M parameters).",
+      "hosting": "self",
+      "conversion": "tools/convert/convert_whisper.py",
+      "files": [
+        {"role": "encoder", "name": "encoder.int8.onnx"},
+        {"role": "decoder", "name": "decoder.int8.onnx"},
+        {"role": "tokens", "name": "tokens.txt"}
+      ]
+    },
+    {
+      "id": "kinit-whisper-base-sk",
+      "displayName": "KInIT Whisper base SK",
+      "family": "whisper",
+      "whisperSize": "base",
+      "sourceRepo": "kinit/whisper-base-sk",
+      "sourceRevision": "4be43dfee41c851d6b534fb802fcd486ef2e8c97",
+      "license": "Apache-2.0",
+      "attribution": "Whisper base fine-tuned for Slovak by KInIT. Base model: OpenAI Whisper.",
+      "quantization": "int8 dynamic, MatMul weights only (onnxruntime quantize_dynamic, QInt8)",
+      "note": "Small and fast (74M parameters).",
+      "hosting": "self",
+      "conversion": "tools/convert/convert_whisper.py",
+      "files": [
+        {"role": "encoder", "name": "encoder.int8.onnx"},
+        {"role": "decoder", "name": "decoder.int8.onnx"},
+        {"role": "tokens", "name": "tokens.txt"}
+      ]
+    },
+    {
+      "id": "kinit-whisper-small-sk",
+      "displayName": "KInIT Whisper small SK",
+      "family": "whisper",
+      "whisperSize": "small",
+      "sourceRepo": "kinit/whisper-small-sk",
+      "sourceRevision": "50946518f91432354172a43f6ee009fb3b97c3e2",
+      "license": "Apache-2.0",
+      "attribution": "Whisper small fine-tuned for Slovak by KInIT. Base model: OpenAI Whisper.",
+      "quantization": "int8 dynamic, MatMul weights only (onnxruntime quantize_dynamic, QInt8)",
+      "note": "Expected default (244M parameters).",
+      "hosting": "self",
+      "conversion": "tools/convert/convert_whisper.py",
+      "files": [
+        {"role": "encoder", "name": "encoder.int8.onnx"},
+        {"role": "decoder", "name": "decoder.int8.onnx"},
+        {"role": "tokens", "name": "tokens.txt"}
+      ]
+    },
+    {
+      "id": "kinit-whisper-medium-sk",
+      "displayName": "KInIT Whisper medium SK",
+      "family": "whisper",
+      "whisperSize": "medium",
+      "sourceRepo": "kinit/whisper-medium-sk",
+      "sourceRevision": "880442a312554f1aff2b69f00954950250444acc",
+      "license": "Apache-2.0",
+      "attribution": "Whisper medium fine-tuned for Slovak by KInIT. Base model: OpenAI Whisper.",
+      "quantization": "int8 dynamic, MatMul weights only (onnxruntime quantize_dynamic, QInt8)",
+      "note": "Tablet / flagship only (769M parameters).",
+      "hosting": "self",
+      "conversion": "tools/convert/convert_whisper.py",
+      "files": [
+        {"role": "encoder", "name": "encoder.int8.onnx"},
+        {"role": "decoder", "name": "decoder.int8.onnx"},
+        {"role": "tokens", "name": "tokens.txt"}
+      ]
+    },
+    {
+      "id": "kinit-parakeet-tdt-v3-sk",
+      "displayName": "KInIT Parakeet TDT 0.6b v3 SK (own export)",
+      "family": "nemo_transducer",
+      "sourceRepo": "kinit/parakeet-tdt-0.6b-v3-sk",
+      "sourceRevision": "45003b0f84e6013400f05cb5eff564461d5f4774",
+      "license": "CC-BY-4.0",
+      "attribution": "Parakeet TDT 0.6b v3 fine-tuned for Slovak by KInIT, based on nvidia/parakeet-tdt-0.6b-v3 by NVIDIA. Licensed under CC-BY-4.0. Converted to ONNX and quantized for this app.",
+      "quantization": "int8 dynamic (onnxruntime quantize_dynamic; encoder QUInt8, decoder and joiner QInt8)",
+      "note": "Our own ONNX export from the NeMo checkpoint.",
+      "hosting": "self",
+      "conversion": "tools/convert/convert_parakeet.py",
+      "files": [
+        {"role": "encoder", "name": "encoder.int8.onnx"},
+        {"role": "decoder", "name": "decoder.int8.onnx"},
+        {"role": "joiner", "name": "joiner.int8.onnx"},
+        {"role": "tokens", "name": "tokens.txt"}
+      ]
+    },
+    {
+      "id": "kinit-parakeet-tdt-v3-sk-thirdparty",
+      "displayName": "KInIT Parakeet TDT 0.6b v3 SK (third-party export)",
+      "family": "nemo_transducer",
+      "sourceRepo": "vibeide-dev/parakeet-tdt-0.6b-v3-sk-sherpa-onnx-int8",
+      "sourceRevision": "656db267f4e0d5b1335c78bc6aec1d37ca37c6ec",
+      "license": "CC-BY-4.0",
+      "attribution": "ONNX export by vibeide-dev of kinit/parakeet-tdt-0.6b-v3-sk (KInIT), based on nvidia/parakeet-tdt-0.6b-v3 by NVIDIA. Licensed under CC-BY-4.0.",
+      "quantization": "int8 dynamic (per the repo card: k2-fsa export script; encoder QUInt8, decoder and joiner QInt8)",
+      "note": "Ready-made export by an unaffiliated third party; lets you test the model before running our own conversion. Not produced or audited by us.",
+      "hosting": "url",
+      "files": [
+        {"role": "encoder", "name": "encoder.int8.onnx", "size": 652282294, "sha256": "d487c474a6de1a783c7198303088bcff0b200f31f953fdd5192fffd4a0ce0039", "url": "https://huggingface.co/vibeide-dev/parakeet-tdt-0.6b-v3-sk-sherpa-onnx-int8/resolve/656db267f4e0d5b1335c78bc6aec1d37ca37c6ec/encoder.int8.onnx"},
+        {"role": "decoder", "name": "decoder.int8.onnx", "size": 11845275, "sha256": "3a3dbd37acd24dad2f1a712743dcdcb0d60c013033273847c194d7d0464a6bf5", "url": "https://huggingface.co/vibeide-dev/parakeet-tdt-0.6b-v3-sk-sherpa-onnx-int8/resolve/656db267f4e0d5b1335c78bc6aec1d37ca37c6ec/decoder.int8.onnx"},
+        {"role": "joiner", "name": "joiner.int8.onnx", "size": 6355277, "sha256": "0d999f3ab9c46a64f35ed81eef45086d7bd14f408d73296fa1a424a7fa5ca2e0", "url": "https://huggingface.co/vibeide-dev/parakeet-tdt-0.6b-v3-sk-sherpa-onnx-int8/resolve/656db267f4e0d5b1335c78bc6aec1d37ca37c6ec/joiner.int8.onnx"},
+        {"role": "tokens", "name": "tokens.txt", "size": 93939, "url": "https://huggingface.co/vibeide-dev/parakeet-tdt-0.6b-v3-sk-sherpa-onnx-int8/resolve/656db267f4e0d5b1335c78bc6aec1d37ca37c6ec/tokens.txt"}
+      ]
+    },
+    {
+      "id": "parakeet-tdt-v3-stock",
+      "displayName": "NVIDIA Parakeet TDT 0.6b v3 (stock)",
+      "family": "nemo_transducer",
+      "sourceRepo": "csukuangfj/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8",
+      "sourceRevision": "ed5d745623472f97cfc2e6c2916ee248798fc5a8",
+      "license": "CC-BY-4.0",
+      "attribution": "nvidia/parakeet-tdt-0.6b-v3 by NVIDIA, licensed under CC-BY-4.0. ONNX export by the sherpa-onnx project (k2-fsa).",
+      "quantization": "int8 dynamic (sherpa-onnx prebuilt; encoder QUInt8, decoder and joiner QInt8)",
+      "note": "Baseline. 25 European languages incl. Slovak; the language cannot be forced, the model picks it itself.",
+      "hosting": "url",
+      "files": [
+        {"role": "encoder", "name": "encoder.int8.onnx", "size": 652282294, "sha256": "1afbe69c1ffdabee94755f42e4daf1d93549131a3da11356bda84fcef0f2c479", "url": "https://huggingface.co/csukuangfj/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/resolve/ed5d745623472f97cfc2e6c2916ee248798fc5a8/encoder.int8.onnx"},
+        {"role": "decoder", "name": "decoder.int8.onnx", "size": 11845274, "sha256": "0222a86147299d4dee90edf95b6d13827edb42ad8b7c9cf0b2582f030937c0b5", "url": "https://huggingface.co/csukuangfj/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/resolve/ed5d745623472f97cfc2e6c2916ee248798fc5a8/decoder.int8.onnx"},
+        {"role": "joiner", "name": "joiner.int8.onnx", "size": 6355277, "sha256": "cbd02f3696e9944970111fb439d9c3fd365a80374565f13f2b9c7007d253fc98", "url": "https://huggingface.co/csukuangfj/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/resolve/ed5d745623472f97cfc2e6c2916ee248798fc5a8/joiner.int8.onnx"},
+        {"role": "tokens", "name": "tokens.txt", "size": 93939, "url": "https://huggingface.co/csukuangfj/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/resolve/ed5d745623472f97cfc2e6c2916ee248798fc5a8/tokens.txt"}
+      ]
+    },
+    {
+      "id": "whisper-small-stock",
+      "displayName": "OpenAI Whisper small (stock)",
+      "family": "whisper",
+      "whisperSize": "small",
+      "sourceRepo": "csukuangfj/sherpa-onnx-whisper-small",
+      "sourceRevision": "8f3c18b358db4d1f2fc1eae49d75cd20989e4309",
+      "license": "MIT (OpenAI Whisper code and weights); the Hugging Face card openai/whisper-small states Apache-2.0",
+      "attribution": "Whisper small by OpenAI. ONNX export by the sherpa-onnx project (k2-fsa).",
+      "quantization": "int8 dynamic, MatMul weights only (sherpa-onnx prebuilt, QInt8)",
+      "note": "Baseline to show the gain from fine-tuning.",
+      "hosting": "url",
+      "files": [
+        {"role": "encoder", "name": "small-encoder.int8.onnx", "size": 112442483, "sha256": "4cbe7b22fa9026b843b60a68640c747de05bafb1a11b57edc0e66c232d9f33a9", "url": "https://huggingface.co/csukuangfj/sherpa-onnx-whisper-small/resolve/8f3c18b358db4d1f2fc1eae49d75cd20989e4309/small-encoder.int8.onnx"},
+        {"role": "decoder", "name": "small-decoder.int8.onnx", "size": 262226114, "sha256": "acad50b5c782696e91b55914cc5ab4f756f1532f76e22aa6fc615f39fb69a8ee", "url": "https://huggingface.co/csukuangfj/sherpa-onnx-whisper-small/resolve/8f3c18b358db4d1f2fc1eae49d75cd20989e4309/small-decoder.int8.onnx"},
+        {"role": "tokens", "name": "small-tokens.txt", "size": 816730, "url": "https://huggingface.co/csukuangfj/sherpa-onnx-whisper-small/resolve/8f3c18b358db4d1f2fc1eae49d75cd20989e4309/small-tokens.txt"}
+      ]
+    },
+    {
+      "id": "slopal-whisper-small-sk",
+      "displayName": "SloPal Whisper small SK (NaiveNeuron)",
+      "family": "whisper",
+      "whisperSize": "small",
+      "sourceRepo": "NaiveNeuron/whisper-small-sk",
+      "sourceRevision": "43ed399ba7fbe02550175bfbc4a37c0f5cc41b5c",
+      "license": "MIT",
+      "attribution": "Whisper small fine-tuned on SloPalSpeech by NaiveNeuron (arXiv:2509.19270). Base model: OpenAI Whisper.",
+      "quantization": "int8 dynamic, MatMul weights only (onnxruntime quantize_dynamic, QInt8)",
+      "note": "Trained on Slovak parliament speech.",
+      "hosting": "self",
+      "conversion": "tools/convert/convert_whisper.py",
+      "files": [
+        {"role": "encoder", "name": "encoder.int8.onnx"},
+        {"role": "decoder", "name": "decoder.int8.onnx"},
+        {"role": "tokens", "name": "tokens.txt"}
+      ]
+    }
+  ]
+}

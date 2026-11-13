@@ -1,0 +1,5 @@
+# For tools/eval/evaluate.py. Versions current on 2026-11-12.
+sherpa-onnx>=2.0.1
+jiwer>=4.0.0
+numpy
+psutil
